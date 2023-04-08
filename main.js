@@ -1,15 +1,13 @@
 // Magic 8 Ball by Azer
 
 // HTML Variables
-let response1 = document.getElementById("output");
+let output = document.getElementById("output");
 // Button Event Listener
 document.getElementById("img").addEventListener("click", imgClicked);
 
 function imgClicked() {
-  // Determine 8 ball response
   let randNum = Math.random();
   console.log(randNum);
-  // 8 ball response
   if (randNum < 0.2) {
     output.innerHTML = "<p>Without a doubt.</p>";
   } else if (randNum < 0.4) {
@@ -21,9 +19,15 @@ function imgClicked() {
   } else {
     output.innerHTML = "<p>Outlook not so good.</p>";
   }
-  let character = document.getElementById("search-in").value.toLowercase();
-  if (character === "does a magic 8 ball actually work?") {
+  let search = document.getElementById("search-in").value.toLowercase();
+  if (search === "does a magic 8 ball actually work?") {
     output.innerHTML = "<p>How dare you doubt me!</p>";
-  } else if (character === 0) {
+  } else if (search === "is java script awesome?") {
+    output.innerHTML = "<p>Of course!</p>";
+  } else if (character === "Is Computer Science cool?") {
+    output.innerHTML = "<p>Obviously, yes</p>";
+  } else search.length === 0;
+  {
+    output.innerHTML = "Please ask a question...";
   }
 }
